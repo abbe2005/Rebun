@@ -1,0 +1,48 @@
+/* Safety Container */
+.safety-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Akira Expanded', sans-serif;
+    min-height: 100vh;
+  }
+  
+  /* Safety Title */
+  .safety-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+  
+  /* Safety Tips */
+  .safety-tips {
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  /* Safety Tip */
+  .safety-tip {
+    background-color: #111;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .safety-tip:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  }
+  
+  .safety-tip h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .safety-tip p {
+    font-size: 1rem;
+    color: #ccc;
+  }

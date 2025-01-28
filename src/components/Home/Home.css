@@ -1,0 +1,59 @@
+/* src/components/Home.css */
+.home {
+    position: relative;
+    width: 100%;
+    height: 84vh; /* Full screen height */
+    overflow: hidden; /* Prevent overflow */
+    background: #000; /* Black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+
+  
+  /* Slide content */
+  .slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 2; /* Ensure content is above the smoke background */
+  }
+  
+  /* Floating icon animation */
+  .icon-container {
+    position: relative;
+    margin-bottom: 2rem; /* Space between icon and text */
+  }
+  
+  .floating-icon {
+    font-size: 8rem; /* Large icon size */
+    color: #fff; /* White icon */
+    animation: float 3s ease-in-out infinite; /* Floating animation */
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0); /* Start and end position */
+    }
+    50% {
+      transform: translateY(-20px); /* Floating up */
+    }
+  }
+  
+  /* Glow effect for text */
+  .slide h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+  
+  .slide p {
+    font-size: 1.5rem;
+    color: #fff;
+  }
+  
+  

@@ -1,0 +1,48 @@
+/* Guide Container */
+.guide-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Akira Expanded', sans-serif;
+    min-height: 100vh;
+  }
+  
+  /* Guide Title */
+  .guide-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+  
+  /* Guide Content */
+  .guide-content {
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  /* Guide Step */
+  .guide-step {
+    background-color: #111;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .guide-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  }
+  
+  .guide-step h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .guide-step p {
+    font-size: 1rem;
+    color: #ccc;
+  }

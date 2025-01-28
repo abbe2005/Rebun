@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  font-family: 'Akira Extended', sans-serif;
+  background-color: #000000;
+  overflow: hidden;
+}
+
+/* src/index.css or src/App.css */
+@font-face {
+  font-family: 'Akira Extended';
+  src: url('./fonts/Akira\ Expanded.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
