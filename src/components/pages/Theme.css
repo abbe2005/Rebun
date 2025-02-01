@@ -1,0 +1,223 @@
+/* Button Styles */
+.theme-toggle-button {
+    font-family: 'Akira Expanded', sans-serif;
+    font-size: 1rem;
+    border: none;
+    background: transparent;
+    color: #fff; /* White text */
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease; /* Smooth transition */
+    outline: none; /* Remove outline */
+}
+
+.theme-toggle-button:hover {
+    background: linear-gradient(90deg, #ff6b81, #ff4757); /* Reverse gradient on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.theme-toggle-button:active {
+    transform: translateY(0); /* Reset lift effect on click */
+}
+/* Light Theme Styles */
+body.light-theme {
+    background-color: #fff;
+    color: #000;
+}
+
+body.light-theme .add-product-container,
+body.light-theme .admin-dashboard-container,
+body.light-theme .forgot-password-container,
+body.light-theme .login-container,
+body.light-theme .market-container,
+body.light-theme .product-dashboard-container,
+body.light-theme .product-details-container,
+body.light-theme .profile-container,
+body.light-theme .register-container,
+body.light-theme .safety-container,
+body.light-theme .guide-container,
+body.light-theme .chats-sidebar,
+body.light-theme .chat-main,
+body.light-theme .chat-header,
+body.light-theme .home,
+body.light-theme .message-input-container {
+    background-color: #f5f5f5; /* Light background */
+}
+body.light-theme .guide-title,
+body.light-theme .safety-title,
+body.light-theme .chats-sidebar h2,
+body.light-theme .chat-info h3,
+
+body.light-theme .chat-header-name {
+    color:#000;
+}
+body.light-theme .add-product-box,
+body.light-theme .admin-dashboard-box,
+body.light-theme .forgot-password-box,
+body.light-theme .login-box,
+body.light-theme .market-box,
+body.light-theme .product-dashboard-box,
+body.light-theme .product-details-box,
+body.light-theme .profile-box,
+body.light-theme .register-box,
+body.light-theme .safety-tip,
+body.light-theme .guide-step,
+body.light-theme .message.received .message-content {
+    background-color: #fff; /* White background for boxes */
+    color: #000; /* Black text */
+}
+body.light-theme .safety-tip p,
+body.light-theme .guide-step p,
+body.light-theme .product-card p,
+body.light-theme .message-time {
+    color:#383838;
+}
+body.light-theme .add-product-form input,
+body.light-theme .add-product-form textarea,
+body.light-theme .add-product-form select,
+body.light-theme .login-input,
+body.light-theme .register-input,
+body.light-theme .profile-box input {
+    background-color: #fff; /* White input fields */
+    color: #000; /* Black text */
+    border: 1px solid #ccc; /* Light border */
+}
+body.light-theme .floating-icon,
+body.light-theme .slide h1,
+body.light-theme .slide p,
+body.light-theme textarea,
+body.light-theme .theme-toggle-button{
+    color:#000;
+}
+body.light-theme .search-filter-container input,
+body.light-theme .search-filter-container select,
+body.light-theme .search-filter-container{
+    background-color: #fff; /* White background */
+    color:#000;
+}
+body.light-theme .product-card,
+body.light-theme .message-input-wrapper,
+body.light-theme .chat-item:hover,
+body.light-theme .chat-item.active {
+    background-color: #dddddd;
+    
+}
+body.light-theme .product-card:hover {
+    box-shadow: 0 0 10px rgba(11, 11, 11, 0.2);
+  }
+body.light-theme .error {
+    color: #ff4444; /* Keep error color */
+}
+
+body.light-theme .message {
+    color: #44ff44; /* Keep message color */
+}
+/* Navbar container */
+body.light-theme .navbar {
+    background-color: #ffffff; /* Change navbar background to white */
+    color: black; /* Change navbar text color to black */
+    border-bottom: 1px solid #ccc; /* Change border color */
+  }
+  
+  body.light-theme .navbar-left,
+  body.light-theme .navbar-right {
+    gap: 4rem;
+  }
+  
+  body.light-theme .navbar-logo img {
+    height: 60px;
+    filter: invert(1) hue-rotate(180deg); /* This will turn the image black */
+    transition: transform 0.3s ease;
+  }
+  
+  body.light-theme .navbar-logo img:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Link styles */
+  body.light-theme .navbar-left a,
+  body.light-theme .navbar-right a {
+    color: black; /* Change link color to black */
+  }
+  
+  /* Hover effect for links */
+  body.light-theme .navbar-left a:hover,
+  body.light-theme .navbar-right a:hover {
+    color: #000; /* Keep text black */
+    transform: scale(1.04);
+  }
+  
+  .pfp img {
+    height: 40px;
+    width: 40px;
+    border: 2px solid #ccc; /* Change border color */
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  /* Icons */
+  body.light-theme .navbar-icon {
+    color: black; /* Change icon color to black */
+  }
+  
+  /* Hover effect for icons */
+  body.light-theme .navbar-icon:hover {
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.6); /* Change shadow color */
+  }
+  
+  /* Dropdown styles */
+  body.light-theme .navbar-dropdown-menu {
+    background-color: #ffffff; /* Change dropdown background to white */
+    border: 1px solid #ccc; /* Change border color */
+  }
+  
+  body.light-theme .navbar-dropdown-menu a {
+    color: black; /* Change dropdown link color to black */
+  }
+  
+  /* Notification Badge */
+  body.light-theme .notification-badge {
+    background-color: #ff3366; /* Keep badge color */
+    color: white; /* Keep badge text color */
+  }
+  
+  /* Notification Container */
+  body.light-theme .notifications-dropdown {
+    background-color: #ffffff; /* Change notifications dropdown background to white */
+    border: 1px solid #ccc; /* Change border color */
+  }
+  
+  body.light-theme .notifications-header {
+    color: black; /* Change header text color to black */
+  }
+  
+  body.light-theme .mark-all-read {
+    color: black; /* Change button text color to black */
+  }
+  
+  body.light-theme .notifications-list {
+    color: black; /* Change list text color to black */
+  }
+  
+  body.light-theme .notification-item {
+    color: #000; /* Change notification item text color to black */
+  }
+  
+  body.light-theme .notification-item:hover {
+    background-color: #f0f0f0; /* Change hover background color */
+  }
+  
+  body.light-theme .notification-item.unread {
+    background-color: #e0e0e0; /* Change unread background color */
+  }
+  
+  body.light-theme .notification-item.unread:hover {
+    background-color: #d0d0d0; /* Change hover background color for unread */
+  }
+  
+  body.light-theme .notification-time {
+    color: #666; /* Keep time color */
+  }
+  
+  body.light-theme .no-notifications {
+    color: #666; /* Keep no notifications text color */
+  }
+/* Add similar styles for other components as needed */

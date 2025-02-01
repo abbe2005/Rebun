@@ -4,6 +4,9 @@ import { collection, addDoc } from "firebase/firestore";
 import supabase from "../../supabase";
 import { useNavigate } from "react-router-dom";
 import "./styles/AddProduct.css";
+import "./Theme.css";
+
+
 
 const AddProduct = () => {
   const [name, setName] = useState("");

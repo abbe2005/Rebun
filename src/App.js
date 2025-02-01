@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react"; // Import useEffect
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
@@ -19,22 +18,25 @@ import AddProduct from "./components/pages/AddProduct";
 import AdminDashboard from "./components/pages/AdminDashboard";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "./firebase";
+import { LanguageProvider } from './components/LanguageContext';
+
 function App() {
   useEffect(() => {
-const trackVisitor = async () => {
-  try {
-    await addDoc(collection(db, "visitors"), {
-      timestamp: new Date().toISOString(),
-      anonymousId: Math.random().toString(36).substring(7), // Generate a unique ID
-    });
-  } catch (err) {
-    console.error("Error tracking visitor:", err);
-  }
-};
+    const trackVisitor = async () => {
+      try {
+        await addDoc(collection(db, "visitors"), {
+          timestamp: new Date().toISOString(),
+          anonymousId: Math.random().toString(36).substring(7), // Generate a unique ID
+        });
+      } catch (err) {
+        console.error("Error tracking visitor:", err);
+      }
+    };
 
-// Call this function when a user visits the website
-trackVisitor();
-}, []);
+    // Call this function when a user visits the website
+    trackVisitor();
+  }, []);
+
   return (
     <Router>
       <Navbar />
@@ -65,4 +67,5 @@ trackVisitor();
   );
 }
 
+// Wrap the App component with LanguageProvider in index.js
 export default App;

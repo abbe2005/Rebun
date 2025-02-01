@@ -1,31 +1,33 @@
 import React, { useState, useEffect } from "react";
 import { FaWallet, FaShoppingBasket, FaChartLine, FaInfoCircle } from "react-icons/fa";
 import "./Home.css";
+import { useLanguage } from '../LanguageContext'; // Import the context
 
 const Home = () => {
+  const { t } = useLanguage(); // Use the context for translations
   const [currentSlide, setCurrentSlide] = useState(0);
 
   // Slide data with icons
   const slides = [
     {
-      text: "BUY WHAT YOU NEED",
-      content: "RENT WHAT YOU WANT",
-      icon: <FaWallet className="floating-icon" />, // Shopping cart icon
+      text: t("buyWhatYouNeed"), // Use translation function
+      content: t("rentWhatYouWant"),
+      icon: <FaWallet className="floating-icon" />, // Wallet icon
     },
     {
-      text: "WANT TO BECOME A SELLER?",
-      content: "ADD YOUR PRODUCT TO THE MARKET!",
-      icon: <FaShoppingBasket className="floating-icon" />, // Shopping cart icon
+      text: t("wantToBecomeSeller"),
+      content: t("addYourProduct"),
+      icon: <FaShoppingBasket className="floating-icon" />, // Shopping basket icon
     },
     {
-      text: "HIGH PRICES?",
-      content: "RENT AND SAVE MONEY!",
-      icon: <FaChartLine className="floating-icon" />, // Shopping cart icon
+      text: t("highPrices"),
+      content: t("rentAndSave"),
+      icon: <FaChartLine className="floating-icon" />, // Chart icon
     },
     {
-      text: "WANNA KNOW MORE ABOUT REBUN?",
-      content: "TAKE A LOOK AT OUR FAQ!",
-      icon: <FaInfoCircle className="floating-icon" />, // Shopping cart icon
+      text: t("wannaKnowMore"),
+      content: t("takeALookAtFAQ"),
+      icon: <FaInfoCircle className="floating-icon" />, // Info icon
     },
   ];
 
