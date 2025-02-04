@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import emailjs from "emailjs-com";
-import "./styles/Login.css";
-
+import "./styles/Contact.css";
+import Social from "../Social/Social";
 const Contact = () => {
   const form = useRef();
   const [isLoading, setIsLoading] = useState(false); // Loading state
@@ -68,6 +68,9 @@ const Contact = () => {
           </button>
         </form>
       </div>
+      <div className="social-icons-container">
+          <Social/>
+        </div>
     </div>
   );
 };

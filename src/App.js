@@ -19,7 +19,7 @@ import AdminDashboard from "./components/pages/AdminDashboard";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "./firebase";
 import { LanguageProvider } from './components/LanguageContext';
-
+import AdModal from "./components/AdModal/AdModal";
 function App() {
   useEffect(() => {
     const trackVisitor = async () => {
@@ -39,6 +39,7 @@ function App() {
 
   return (
     <Router>
+       <AdModal /> {/* Add the AdModal here */}
       <Navbar />
       <Routes>
         {/* Home Page */}

@@ -57,3 +57,16 @@
   }
   
   
+  @media (max-width: 768px) {
+    .slide h1 {
+      font-size: 1.5rem; /* Even smaller font size for smaller screens */
+    }
+  
+    .slide p {
+      font-size: 1rem; /* Even smaller font size for smaller screens */
+    }
+  
+    .floating-icon {
+      font-size: 4rem; /* Even smaller icon size for smaller screens */
+    }
+  }

@@ -1,4 +1,3 @@
-// src/LanguageContext.js
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const LanguageContext = createContext();
@@ -8,6 +7,7 @@ export const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState(() => {
     return localStorage.getItem('language') || 'en'; // Default language
   });
+
   const translations = {
     en: {
       market: "Market",
@@ -27,13 +27,13 @@ export const LanguageProvider = ({ children }) => {
       login: "Login",
       about: "About Us",
       buyWhatYouNeed: "BUY WHAT YOU NEED",
-    rentWhatYouWant: "RENT WHAT YOU WANT",
-    wantToBecomeSeller: "WANT TO BECOME A SELLER?",
-    addYourProduct: "ADD YOUR PRODUCT TO THE MARKET!",
-    highPrices: "HIGH PRICES?",
-    rentAndSave: "RENT AND SAVE MONEY!",
-    wannaKnowMore: "WANNA KNOW MORE ABOUT REBUN?",
-    takeALookAtFAQ: "TAKE A LOOK AT OUR FAQ!",
+      rentWhatYouWant: "RENT WHAT YOU WANT",
+      wantToBecomeSeller: "WANT TO BECOME A SELLER?",
+      addYourProduct: "ADD YOUR PRODUCT TO THE MARKET!",
+      highPrices: "HIGH PRICES?",
+      rentAndSave: "RENT AND SAVE MONEY!",
+      wannaKnowMore: "WANNA KNOW MORE ABOUT REBUN?",
+      takeALookAtFAQ: "TAKE A LOOK AT OUR FAQ!",
     },
     ar: {
       market: "المتجر",
@@ -53,13 +53,13 @@ export const LanguageProvider = ({ children }) => {
       login: "تسجيل الدخول",
       about: "معلومات عنا",
       buyWhatYouNeed: "اشتر ما تحتاجه",
-    rentWhatYouWant: "استأجر ما تريده",
-    wantToBecomeSeller: "تريد أن تبيع منتجاتك؟",
-    addYourProduct: "أضفها إلى المتجر الآن",
-    highPrices: "أسعار عالية؟",
-    rentAndSave: "استأجر و اقتصد في مالك",
-    wannaKnowMore: "تريد أن تعرف أكثر عن موقعنا؟",
-    takeALookAtFAQ: "ألق نظرة على أسئلتنا الشائعة",
+      rentWhatYouWant: "استأجر ما تريده",
+      wantToBecomeSeller: "تريد أن تبيع منتجاتك؟",
+      addYourProduct: "أضفها إلى المتجر الآن",
+      highPrices: "أسعار عالية؟",
+      rentAndSave: "استأجر و اقتصد في مالك",
+      wannaKnowMore: "تريد أن تعرف أكثر عن موقعنا؟",
+      takeALookAtFAQ: "ألق نظرة على أسئلتنا الشائعة",
     },
   };
 
@@ -71,7 +71,7 @@ export const LanguageProvider = ({ children }) => {
   }, [language]);
 
   return (
-    <LanguageContext.Provider value={{ t, setLanguage }}>
+    <LanguageContext.Provider value={{ t, language, setLanguage }}>
       {children}
     </LanguageContext.Provider>
   );

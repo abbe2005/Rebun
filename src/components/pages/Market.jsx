@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { db } from "../../firebase"; // Use Firebase for everything
-import { collection, query, where, getDocs } from "firebase/firestore"; // Import Firestore modular methods
+import { db } from "../../firebase";
+import { collection, query, where, getDocs } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import "./styles/Market.css";
 
@@ -60,6 +60,20 @@ const Market = () => {
   const handleProductClick = (productId) => {
     navigate(`/product/${productId}`);
   };
+
+  // Group products by category
+  const groupProductsByCategory = () => {
+    const grouped = {};
+    products.forEach((product) => {
+      if (!grouped[product.category]) {
+        grouped[product.category] = [];
+      }
+      grouped[product.category].push(product);
+    });
+    return grouped;
+  };
+
+  const groupedProducts = groupProductsByCategory();
 
   return (
     <div className="market-container">
@@ -121,20 +135,39 @@ const Market = () => {
             <option value="price">Price Low to High</option>
           </select>
         </div>
-        <div className="product-grid">
-          {products.map((product) => (
-            <div
-              key={product.id}
-              className="product-card"
-              onClick={() => handleProductClick(product.id)}
-            >
-              <img src={product.pictures[0]} alt={product.name} />
-              <h3>{product.name}</h3>
-              <p>{product.price} {product.priceType}</p>
-              <p>{product.category}</p>
+
+        {/* Render sections by category */}
+        {Object.keys(groupedProducts).length > 0 ? (
+          Object.keys(groupedProducts).map((category) => (
+            <div key={category} className="category-section">
+              <h2 className="category-title">{category}</h2>
+              <div className="product-grid">
+                {groupedProducts[category].map((product) => (
+                  <div
+                    key={product.id}
+                    className="card"
+                    onClick={() => handleProductClick(product.id)}
+                  >
+                    <img src={product.pictures[0]} alt={product.name} />
+                    <div className="card__content">
+                      <p className="card__title">{product.name}</p>
+                      <p className="card__description">
+                        {product.type}<br></br>
+                        {product.price} {product.priceType}
+                        <br></br>
+                        {product.condition}
+                        <br></br>
+                        {product.category}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
-        </div>
+          ))
+        ) : (
+          <p>No products found.</p>
+        )}
       </div>
     </div>
   );

@@ -129,6 +129,7 @@ const ProductDetails = () => {
         </div>
         <div className="product-info">
           <p>{product.description}</p>
+          <p>This product is for: {product.type}</p>
           <p>Price: {product.price} {product.priceType}</p>
           <p>Category: {product.category}</p>
           <p>Condition: {product.condition}</p>

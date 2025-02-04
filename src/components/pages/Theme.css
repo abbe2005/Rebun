@@ -135,7 +135,8 @@ body.light-theme .navbar {
   
   /* Link styles */
   body.light-theme .navbar-left a,
-  body.light-theme .navbar-right a {
+  body.light-theme .navbar-right a,
+  body.light-theme .themeToggle {
     color: black; /* Change link color to black */
   }
   
@@ -219,5 +220,8 @@ body.light-theme .navbar {
   
   body.light-theme .no-notifications {
     color: #666; /* Keep no notifications text color */
+  }
+  body.light-theme .hex-brick{
+    background: #000;
   }
 /* Add similar styles for other components as needed */

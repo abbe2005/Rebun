@@ -2,10 +2,13 @@ import React, { useState, useEffect } from "react";
 import { FaWallet, FaShoppingBasket, FaChartLine, FaInfoCircle } from "react-icons/fa";
 import "./Home.css";
 import { useLanguage } from '../LanguageContext'; // Import the context
+import ClickSpark from '../ClickSpark';
+import Loading from '../Loading/Loading'; // Import the Loading component
 
 const Home = () => {
   const { t } = useLanguage(); // Use the context for translations
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Slide data with icons
   const slides = [
@@ -41,17 +44,39 @@ const Home = () => {
     return () => clearInterval(interval);
   }, [slides.length]);
 
+  // Handle loading state
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // 2 seconds delay
+
+    return () => clearTimeout(timer); // Cleanup timer on component unmount
+  }, []);
+
   return (
     <div className="home">
-      {/* Slide Content */}
-      <div className="slide">
-        <h1>{slides[currentSlide].text}</h1>
-        <p>{slides[currentSlide].content}</p>
-        <br></br><br></br><br></br>
-        <div className="icon-container">
-          {slides[currentSlide].icon} {/* Floating icon */}
-        </div>
-      </div>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <>
+          <ClickSpark
+            sparkColor='#fff'
+            sparkSize={10}
+            sparkRadius={15}
+            sparkCount={8}
+            duration={400}
+          />
+          {/* Slide Content */}
+          <div className="slide">
+            <h1>{slides[currentSlide].text}</h1>
+            <p>{slides[currentSlide].content}</p>
+            <br></br><br></br><br></br>
+            <div className="icon-container">
+              {slides[currentSlide].icon} {/* Floating icon */}
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };
